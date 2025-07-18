@@ -1,8 +1,27 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Architects Daughter';
+  src: url('/fonts/ArchitectsDaughter.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archistico Bold';
+  src: url('/fonts/Archistico_Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-architects: 'Architects Daughter', cursive;
+  --font-archistico: 'Archistico Bold', Arial, Helvetica, sans-serif;
+  --font-poppins: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 @theme inline {
