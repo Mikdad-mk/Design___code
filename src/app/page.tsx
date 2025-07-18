@@ -9,6 +9,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-gradient-to-br from-[#e0f7fa] via-white to-[#ede7f6] overflow-x-hidden font-sans w-full max-w-full">
 
       {/* Grid background overlay (always behind all content) */}
+      <div className="pointer-events-none absolute inset-0 z-0 glow-gradient-animate" />
       <div className="pointer-events-none absolute inset-0 z-0 opacity-40" style={{backgroundImage: 'linear-gradient(to right, #e0e0e0 1px, transparent 1px), linear-gradient(to bottom, #e0e0e0 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
 
       {/* Navigation Bar */}
@@ -78,7 +79,7 @@ export default function Home() {
       </nav>
 
       {/* Headline Section */}
-      <section className="relative flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12 px-4 sm:px-6 lg:px-12 xl:px-16 mt-6 w-full max-w-full lg:max-w-[1100px] xl:max-w-[1300px] 2xl:max-w-[1400px] mx-auto z-10 animate-fadeInUp delay-200">
+      <section className="relative flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12 px-4 sm:px-6 lg:px-12 xl:px-16 -mt-6 w-full max-w-full lg:max-w-[1100px] xl:max-w-[1300px] 2xl:max-w-[1400px] mx-auto z-10 animate-fadeInUp delay-200">
         {/* Text */}
         <div className="w-full lg:w-1/2 flex flex-col gap-4 mb-2 md:mb-6 text-center md:text-left px-2 sm:px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight" style={{ fontFamily: 'var(--font-architects)' }}>
