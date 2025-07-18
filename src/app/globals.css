@@ -43,3 +43,107 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Modern Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.animate-fadeIn {
+  animation: fadeIn 1s ease both;
+}
+.animate-scaleIn {
+  animation: scaleIn 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Delay utilities for staggered animations */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Hover effects */
+.hover-scale-up:hover {
+  transform: scale(1.08);
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hover-shadow-lg:hover {
+  box-shadow: 0 8px 32px rgba(76,94,255,0.18), 0 1.5px 4px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Custom Mouse Pointer */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: rgba(76, 94, 255, 0.9);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s, transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 12px rgba(76,94,255,0.18);
+}
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(76, 94, 255, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s, transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body.hide-default-cursor {
+  cursor: none;
+}
+
+@keyframes bounceY {
+  0%, 100% {
+    transform: translateY(-40px);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+.bounce-vertical {
+  animation: bounceY 1.4s infinite;
+}

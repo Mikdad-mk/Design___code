@@ -12,28 +12,30 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 z-0 opacity-40" style={{backgroundImage: 'linear-gradient(to right, #e0e0e0 1px, transparent 1px), linear-gradient(to bottom, #e0e0e0 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
 
       {/* Navigation Bar */}
-      <nav className="w-full max-w-[1400px] mx-auto px-4 md:px-16 pt-4 z-20 relative">
+      <nav className="w-full max-w-[1400px] mx-auto px-4 md:px-16 pt-4 z-20 relative animate-fadeInUp">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="rotate-[-15deg] shadow-lg flex items-center justify-center w-28 sm:w-36 md:w-[186px] h-14 md:h-[72px] bg-[#4C5EFF] relative">
+          <div className="relative flex items-center justify-center mt-14 overflow-visible" style={{height: '72px'}}>
             <svg
-              className="absolute left-1/2 -translate-x-1/2 -top-8 md:-top-12 w-10 md:w-[60px] h-10 md:h-[60px]"
-              viewBox="0 0 60 60"
+              className="absolute left-1/2 -translate-x-1/2 -top-16 w-20 md:w-[120px] h-40 md:h-[160px] z-0 pointer-events-none bounce-vertical"
+              viewBox="0 0 60 160"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M30 0 C10 30, 50 30, 30 60"
+                d="M30 0 C10 80, 50 80, 30 70"
                 stroke="#4C5EFF"
                 strokeWidth="4"
                 strokeLinecap="round"
               />
             </svg>
-            <img
-              src="/design code logo-01-01.svg"
-              alt="Logo"
-              className="object-contain w-full h-full scale-[1.5] md:scale-[1.95]"
-            />
+            <div className="rotate-[-15deg] shadow-lg flex items-center justify-center w-28 sm:w-36 md:w-[186px] h-14 md:h-[72px] bg-[#4C5EFF] bounce-vertical relative z-10">
+              <img
+                src="/design code logo-01-01.svg"
+                alt="Logo"
+                className="object-contain w-full h-full scale-[1.5] md:scale-[1.95]"
+              />
+            </div>
           </div>
 
           {/* Desktop Menu */}
@@ -76,7 +78,7 @@ export default function Home() {
       </nav>
 
       {/* Headline Section */}
-      <section className="relative flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12 px-4 sm:px-6 lg:px-12 xl:px-16 mt-6 w-full max-w-full lg:max-w-[1100px] xl:max-w-[1300px] 2xl:max-w-[1400px] mx-auto z-10">
+      <section className="relative flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12 px-4 sm:px-6 lg:px-12 xl:px-16 mt-6 w-full max-w-full lg:max-w-[1100px] xl:max-w-[1300px] 2xl:max-w-[1400px] mx-auto z-10 animate-fadeInUp delay-200">
         {/* Text */}
         <div className="w-full lg:w-1/2 flex flex-col gap-4 mb-2 md:mb-6 text-center md:text-left px-2 sm:px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight" style={{ fontFamily: 'var(--font-architects)' }}>
@@ -109,22 +111,21 @@ export default function Home() {
       </section>
 
       {/* Floating Tags - Fixed Position & Responsive Spacing */}
-      <div className="flex flex-wrap justify-center items-center gap-3 px-4 mt-4 mb-8 z-20 w-full">
-        <div className="bg-[#A695FD] text-white px-4 py-2 text-sm md:text-base rounded shadow-md">UI / UX Design</div>
-        <div className="bg-[#1FE5B7] text-white px-4 py-2 text-sm md:text-base rounded shadow-md">Mobile App</div>
-        <div className="bg-[#FEBA31] text-white px-4 py-2 text-sm md:text-base rounded shadow-md">Web App</div>
+      <div className="flex flex-wrap justify-center items-center gap-3 px-4 mt-4 mb-8 z-20 w-full relative animate-fadeInUp delay-300">
+        <div className="bg-[#A695FD] text-white px-4 py-2 text-sm md:text-base rounded shadow-md hover-scale-up hover-shadow-lg animate-scaleIn delay-400">UI / UX Design</div>
+        <div className="bg-[#1FE5B7] text-white px-4 py-2 text-sm md:text-base rounded shadow-md hover-scale-up hover-shadow-lg animate-scaleIn delay-500">Mobile App</div>
+        <div className="bg-[#FEBA31] text-white px-4 py-2 text-sm md:text-base rounded shadow-md hover-scale-up hover-shadow-lg animate-scaleIn delay-500">Web App</div>
       </div>
 
       {/* Tech Stack Bar */}
       <div
-        className="w-full max-w-[90%] sm:max-w-[500px] md:max-w-[520px] xl:w-[480px] rounded-4xl shadow-xl flex items-center justify-between gap-2 md:gap-4 px-2 md:px-6 xl:px-8 py-2 md:py-4 z-30 mx-auto mt-6 xl:mt-0
-        xl:absolute xl:left-1/2 xl:bottom-8 xl:-translate-x-1/2 bg-white"
+        className="w-full max-w-[90%] sm:max-w-[500px] md:max-w-[520px] xl:w-[480px] rounded-4xl shadow-xl flex items-center justify-between gap-2 md:gap-4 px-2 md:px-6 xl:px-8 py-2 md:py-4 z-30 mx-auto mt-6 xl:mt-0 xl:absolute xl:left-1/2 xl:bottom-8 xl:-translate-x-1/2 bg-white relative border border-gray-200 animate-fadeInUp delay-400"
       >
-        <Image src="/javascript-svgrepo-com.svg" alt="JavaScript" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
-        <Image src="/reactjs-svgrepo-com.svg" alt="React" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
-        <Image src="/next.svg" alt="Next.js" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
-        <Image src="/node-svgrepo-com.svg" alt="Node.js" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
-        <Image src="/expo-svgrepo-com.svg" alt="Expo" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
+        <Image src="/javascript-svgrepo-com.svg" alt="JavaScript" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10 hover-scale-up hover-shadow-lg animate-scaleIn delay-400" />
+        <Image src="/reactjs-svgrepo-com.svg" alt="React" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10 hover-scale-up hover-shadow-lg animate-scaleIn delay-500" />
+        <Image src="/next.svg" alt="Next.js" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10 hover-scale-up hover-shadow-lg animate-scaleIn delay-500" />
+        <Image src="/node-svgrepo-com.svg" alt="Node.js" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10 hover-scale-up hover-shadow-lg animate-scaleIn delay-500" />
+        <Image src="/expo-svgrepo-com.svg" alt="Expo" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10 hover-scale-up hover-shadow-lg animate-scaleIn delay-500" />
       </div>
     </div>
   );
