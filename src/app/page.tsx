@@ -6,25 +6,18 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#e0f7fa] via-white to-[#ede7f6] overflow-x-hidden font-sans">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#e0f7fa] via-white to-[#ede7f6] overflow-x-hidden font-sans w-full max-w-full">
 
-      {/* Grid background overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-40"
-        style={{
-          backgroundImage:
-            'linear-gradient(to right, #e0e0e0 1px, transparent 1px), linear-gradient(to bottom, #e0e0e0 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
+      {/* Grid background overlay (always behind all content) */}
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-40" style={{backgroundImage: 'linear-gradient(to right, #e0e0e0 1px, transparent 1px), linear-gradient(to bottom, #e0e0e0 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
 
       {/* Navigation Bar */}
       <nav className="w-full max-w-[1400px] mx-auto px-4 md:px-16 pt-4 z-20 relative">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="rotate-[-15deg] shadow-lg flex items-center justify-center mt-4 md:mt-12 w-32 sm:w-40 md:w-[186px] h-14 md:h-[72px] bg-[#4C5EFF] relative">
+          <div className="rotate-[-15deg] shadow-lg flex items-center justify-center w-28 sm:w-36 md:w-[186px] h-14 md:h-[72px] bg-[#4C5EFF] relative">
             <svg
-              className="absolute left-1/2 -translate-x-1/2 -top-8 md:-top-12 w-12 md:w-[60px] h-12 md:h-[60px]"
+              className="absolute left-1/2 -translate-x-1/2 -top-8 md:-top-12 w-10 md:w-[60px] h-10 md:h-[60px]"
               viewBox="0 0 60 60"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +32,7 @@ export default function Home() {
             <img
               src="/design code logo-01-01.svg"
               alt="Logo"
-              className="object-contain w-full h-full scale-150 md:scale-195"
+              className="object-contain w-full h-full scale-[1.5] md:scale-[1.95]"
             />
           </div>
 
@@ -83,74 +76,55 @@ export default function Home() {
       </nav>
 
       {/* Headline Section */}
-      <section className="relative flex flex-col-reverse md:flex-row items-center md:items-start justify-between px-4 md:px-16 mt-8 md:mt-16 w-full max-w-[1400px] mx-auto z-10 min-h-[320px] md:min-h-[420px]">
+      <section className="relative flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12 px-4 sm:px-6 lg:px-12 xl:px-16 mt-6 w-full max-w-full lg:max-w-[1100px] xl:max-w-[1300px] 2xl:max-w-[1400px] mx-auto z-10">
         {/* Text */}
-        <div className="flex-1 flex flex-col gap-4 max-w-full md:max-w-2xl pt-4 md:pt-16 text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium text-black leading-tight" style={{ fontFamily: 'var(--font-architects)' }}>
+        <div className="w-full lg:w-1/2 flex flex-col gap-4 mb-2 md:mb-6 text-center md:text-left px-2 sm:px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight" style={{ fontFamily: 'var(--font-architects)' }}>
             <span className="relative inline-block">
               We’re creative
-              <span className="absolute left-0 bottom-3 w-full h-2 bg-yellow-200 -z-10 rounded-md"></span>
+              <span className="absolute left-0 bottom-2 md:bottom-3 w-full h-2 bg-yellow-200 -z-10 rounded-md"></span>
             </span>
           </h1>
           <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-start items-center gap-2 mt-2">
-            <span className="text-5xl sm:text-6xl md:text-8xl font-bold text-[#444]" style={{ fontFamily: 'var(--font-archistico)', letterSpacing: '-2px', textShadow: '0 1px 0 #fff' }}>
+            <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[#444]" style={{ fontFamily: 'var(--font-archistico)', letterSpacing: '-2px', textShadow: '0 1px 0 #fff' }}>
               Design
             </span>
-            <span className="bg-[#536dfe] text-white text-4xl sm:text-5xl md:text-7xl px-4 py-1 rounded-lg rotate-[5deg] shadow-lg ml-2" style={{ fontFamily: 'var(--font-archistico)' }}>
+            <span className="bg-[#536dfe] text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl px-4 py-1 rounded-lg rotate-[5deg] shadow-lg ml-2" style={{ fontFamily: 'var(--font-archistico)' }}>
               Studio
             </span>
           </div>
         </div>
 
         {/* Hand SVG */}
-        <div className="flex-1 flex justify-center items-center w-full mb-6 md:mb-0">
+        <div className="w-full lg:w-1/2 flex justify-center items-start">
           <Image
             src="/hand-01.svg"
             alt="Hand illustration"
             width={800}
             height={800}
-            className="object-contain w-full max-w-[220px] xs:max-w-[260px] sm:max-w-[320px] md:max-w-[600px] lg:max-w-[800px]"
+            className="object-contain w-full max-w-[240px] sm:max-w-[300px] md:max-w-[500px] lg:max-w-[600px]"
             priority
           />
         </div>
       </section>
 
-      {/* Floating Tags Desktop */}
-      <div className="hidden md:block absolute z-20" style={{ left: '234.02px', top: '658.05px', transform: 'rotate(-75deg)', backdropFilter: 'blur(4px)', boxShadow: '0 3px 6px -1px rgba(0, 0, 0, 0.25)' }}>
-        <div className="px-3 py-3 shadow-lg text-lg font-medium w-40 text-center" style={{ background: '#A695FD', color: 'white' }}>
-          UI / UX Design
-        </div>
-      </div>
-      <div className="hidden md:block absolute z-20" style={{ left: '394.02px', top: '643.83px', transform: 'rotate(-100deg)', backdropFilter: 'blur(4px)', boxShadow: '0 3px 6px -1px rgba(0, 0, 0, 0.25)' }}>
-        <div className="px-9 py-5 text-lg font-medium text-center" style={{ background: '#1FE5B7', color: 'white' }}>
-          Mobile App
-        </div>
-      </div>
-      <div className="hidden md:block absolute z-20" style={{ left: '530.44px', top: '670.7px', transform: 'rotate(-70deg)', backdropFilter: 'blur(4px)', boxShadow: '0 3px 6px -1px rgba(153, 150, 150, 0.25)' }}>
-        <div className="px-6 py-3 shadow-lg text-lg font-medium w-32 text-center" style={{ background: '#FEBA31', color: 'white' }}>
-          Web App
-        </div>
-      </div>
-
-      {/* Floating Tags Mobile */}
-      <div className="flex md:hidden justify-center items-center flex-wrap gap-2 mt-4 px-4 z-20">
-        <div className="bg-[#A695FD] text-white px-3 py-2 text-sm rounded shadow-md">UI / UX Design</div>
-        <div className="bg-[#1FE5B7] text-white px-3 py-2 text-sm rounded shadow-md">Mobile App</div>
-        <div className="bg-[#FEBA31] text-white px-3 py-2 text-sm rounded shadow-md">Web App</div>
+      {/* Floating Tags - Fixed Position & Responsive Spacing */}
+      <div className="flex flex-wrap justify-center items-center gap-3 px-4 mt-4 mb-8 z-20 w-full">
+        <div className="bg-[#A695FD] text-white px-4 py-2 text-sm md:text-base rounded shadow-md">UI / UX Design</div>
+        <div className="bg-[#1FE5B7] text-white px-4 py-2 text-sm md:text-base rounded shadow-md">Mobile App</div>
+        <div className="bg-[#FEBA31] text-white px-4 py-2 text-sm md:text-base rounded shadow-md">Web App</div>
       </div>
 
       {/* Tech Stack Bar */}
-      <div className="fixed left-1/2 -translate-x-1/2 bottom-2 md:bottom-8 w-[95vw] md:w-[480px] max-w-[98vw] px-4 md:px-8 py-3 bg-white rounded-3xl shadow-lg flex items-center justify-between z-30 backdrop-blur-md">
-        {["javascript-svgrepo-com", "reactjs-svgrepo-com", "next", "node-svgrepo-com", "expo-svgrepo-com"].map((icon, i) => (
-          <Image
-            key={i}
-            src={`/${icon}.svg`}
-            alt={icon}
-            width={32}
-            height={32}
-            className="w-8 h-8 md:w-10 md:h-10"
-          />
-        ))}
+      <div
+        className="w-full max-w-[90%] sm:max-w-[500px] md:max-w-[520px] xl:w-[480px] rounded-4xl shadow-xl flex items-center justify-between gap-2 md:gap-4 px-2 md:px-6 xl:px-8 py-2 md:py-4 z-30 mx-auto mt-6 xl:mt-0
+        xl:absolute xl:left-1/2 xl:bottom-8 xl:-translate-x-1/2 bg-white"
+      >
+        <Image src="/javascript-svgrepo-com.svg" alt="JavaScript" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
+        <Image src="/reactjs-svgrepo-com.svg" alt="React" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
+        <Image src="/next.svg" alt="Next.js" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
+        <Image src="/node-svgrepo-com.svg" alt="Node.js" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
+        <Image src="/expo-svgrepo-com.svg" alt="Expo" width={32} height={32} className="w-8 h-8 lg:w-10 lg:h-10" />
       </div>
     </div>
   );
